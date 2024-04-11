@@ -1,0 +1,25 @@
+@import '../../general.scss';
+
+.result-list {
+  padding: 0;
+  margin-top: 20px;
+}
+
+.result-list li {
+  list-style: none;
+}
+
+.btn-more-results {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: $color-bg-active;
+    text-transform: $text-upper;
+    color: $color-font-btn;
+    margin-bottom: 40px;
+    font-size: $font-size-small;
+    line-height: 20px;
+    letter-spacing: .5px;
+    border-radius: $border-radius-size;
+    font-family: $font-family;
+    border: none;
+}

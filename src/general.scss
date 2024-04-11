@@ -1,0 +1,37 @@
+// Colors
+$color-accent: #2196F3; 
+
+$color-body: #F3F7FA;
+$color-bg-main: #ffffff;
+$color-bg-active: $color-accent;
+$color-bg-hover: #F1FCFF;
+
+$color-font-main: #4A4A4A;
+$color-font-light: #A0B0B9;
+$color-font-active: #ffffff;
+$color-font-btn: #ffffff;
+$color-font-accent: $color-accent;
+
+$color-border-main: #DFE5EC;
+$color-border-active: $color-accent;
+$color-border-nonactive: #9ABBCE;
+
+//Fonts
+$font-family: 'Open Sans', sans-serif;
+
+$font-size-main: 14px;
+$font-size-small: 12px;
+$font-size-filter: 13px;
+$font-size-large: 24px;
+
+$font-weight-main: 400;
+$font-weight-bold: 600;
+
+//Text
+$text-upper: uppercase;
+
+//Border
+$border-radius-size: 5px;
+
+//Shadow
+$shadow: 0px 2px 8px 0px #0000001A;

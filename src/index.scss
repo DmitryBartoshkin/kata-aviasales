@@ -1,0 +1,9 @@
+@import './general.scss';
+
+body {
+  background-color: $color-body;
+  font-family: $font-family;
+  font-weight: $font-weight-main;
+  font-size: $font-size-main;
+  color: $color-font-main;
+}
