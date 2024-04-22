@@ -18,7 +18,8 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "prettier",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react-redux/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -40,7 +41,8 @@
     "prettier",
     "import",
     "jsx-a11y",
-    "react-hooks"
+    "react-hooks",
+    "react-redux"
   ],
   "rules": {
     "indent": [
@@ -66,6 +68,7 @@
     "react/jsx-uses-vars": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "react-redux/connect-prefer-named-arguments": 2,
     "import/no-unresolved": [
       2,
       {

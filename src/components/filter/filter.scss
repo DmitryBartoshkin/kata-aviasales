@@ -24,8 +24,8 @@ label {
 }
 
 label:hover {
-    background-color: $color-bg-hover;
-    cursor: pointer;
+  background-color: $color-bg-hover;
+  cursor: pointer;
 }
 
 .filter-wrapper label:last-child {
@@ -65,5 +65,5 @@ input[type='checkbox']:checked {
 }
 
 input[type='checkbox']:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
