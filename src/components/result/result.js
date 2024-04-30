@@ -3,10 +3,10 @@ import { format, add } from 'date-fns'
 
 import './result.scss'
 
-export default function Result() {
+export default function Result({ countTicketsShowned }) {
   const ticketsListStore = (state) => state.ticketsList
   const ticketsListData = useSelector(ticketsListStore)
-  const { tickets } = ticketsListData.ticketsList
+  const { ticketsList } = ticketsListData
 
   function formatDate(date) {
     const formatedDate = format(new Date(date), 'HH:mm')
@@ -37,10 +37,22 @@ export default function Result() {
     return text
   }
 
-  if (tickets) {
-    const ticketsPack = tickets.slice(0, 5)
-    const ticketsList = ticketsPack.map((el) => (
-      <div className="result-wrapper" key={`${el.segments[0].date}-${el.segments[0].duration}`}>
+  if (ticketsList) {
+    let message = null
+    const ticketsPack = ticketsList
+      .slice(0, 499)
+      .filter((el) => el.extraClass)
+      .slice(0, countTicketsShowned)
+
+    if (ticketsPack.length === 0) {
+      message = 'Рейсов, подходящих под заданные фильтры, не найдено!'
+    }
+
+    const tickets = ticketsPack.map((el) => (
+      <li
+        className={`result-wrapper${el.extraClass ? ` ${el.extraClass}` : ''}`}
+        key={`${el.segments[0].date}-${el.segments[0].duration}-${el.segments[1].duration}`}
+      >
         <div className="result-header">
           <span className="result-price">{`${el.price}`.replace(/(?=\d{3}$)/, ' ')} ₽</span>
           <img className="result-logo" src={`//pics.avs.io/99/36/${el.carrier}.png`} alt="Logo air company" />
@@ -85,9 +97,9 @@ export default function Result() {
             {`${el.segments[1].stops}`.replaceAll(',', ', ')}
           </div>
         </div>
-      </div>
+      </li>
     ))
 
-    return ticketsList
+    return message || tickets
   }
 }

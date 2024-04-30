@@ -16,3 +16,14 @@
 .app-main-content {
   width: 502px;
 }
+
+@media screen and (max-width: 450px) {
+  .app-wrapper {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .app-body {
+    flex-wrap: wrap;
+  }
+}

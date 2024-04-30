@@ -3,6 +3,7 @@
 .filter-wrapper {
   width: 232px;
   padding-bottom: 10px;
+  margin-bottom: 20px;
   background-color: $color-bg-main;
   border-radius: $border-radius-size;
   box-shadow: $shadow;
@@ -66,4 +67,15 @@ input[type='checkbox']:checked {
 
 input[type='checkbox']:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .filter-wrapper {
+    width: 100%;
+  }
+
+  label {
+    display: inline-block;
+    width: 90%;
+  }
 }

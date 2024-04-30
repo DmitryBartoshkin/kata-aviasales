@@ -34,9 +34,21 @@
 
 .tab:hover {
   cursor: pointer;
+  background-color: $color-bg-hover;
 }
 
 .active {
   background-color: $color-bg-active;
   color: $color-font-active;
+}
+
+.active:hover {
+  background-color: $color-bg-nonactive;
+}
+
+@media screen and (max-width: 450px) {
+  .tab {
+    display: flex;
+    align-self: center;
+  }
 }

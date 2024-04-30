@@ -1,20 +1,24 @@
 import { useSelector, useDispatch } from 'react-redux'
 
 import { toggleItem } from '../store/filter-slice'
+import { filterTicketsList } from '../store/tickets-slice'
 import './filter.scss'
 
-const filterState = (state) => state.filters
-
 export default function Filter() {
-  const filterList = useSelector(filterState)
+  const filterState = (state) => state.filters
+  const filterListData = useSelector(filterState)
   const dispatch = useDispatch()
-  const filters = filterList.filterItems.map((el) => (
+  const { filterItems } = filterListData
+  const filters = filterItems.map((el) => (
     <label htmlFor={el.id} key={el.id}>
       <input
         type="checkbox"
         id={el.id}
         checked={el.checked}
-        onChange={() => dispatch(toggleItem({ id: el.id, checked: el.checked }))}
+        onChange={() => {
+          dispatch(toggleItem({ id: el.id, checked: el.checked }))
+          dispatch(filterTicketsList({ id: el.id, checked: el.checked }))
+        }}
       />
       <span>{el.title}</span>
     </label>

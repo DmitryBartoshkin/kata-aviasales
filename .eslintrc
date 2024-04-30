@@ -4,11 +4,7 @@
     "es2021": true
   },
   "parser": "@babel/eslint-parser",
-  "ignorePatterns": [
-    "node_modules",
-    "dist",
-    "build"
-  ],
+  "ignorePatterns": ["node_modules", "dist", "build"],
   "extends": [
     "airbnb",
     "eslint:recommended",
@@ -30,38 +26,17 @@
     "requireConfigFile": false,
     "babelOptions": {
       "parserOpts": {
-        "plugins": [
-          "jsx"
-        ]
+        "plugins": ["jsx"]
       }
     }
   },
-  "plugins": [
-    "react",
-    "prettier",
-    "import",
-    "jsx-a11y",
-    "react-hooks",
-    "react-redux"
-  ],
+  "plugins": ["react", "prettier", "import", "jsx-a11y", "react-hooks", "react-redux"],
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
+    "indent": ["error", 2],
     "prettier/prettier": "error",
-    "linebreak-style": [
-      0,
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ],
+    "linebreak-style": [0, "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": 0,
     "react/jsx-uses-react": "error",
@@ -78,23 +53,13 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "import/order": [
       2,
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
         "newlines-between": "always"
       }
     ]
@@ -102,17 +67,22 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ],
-        "moduleDirectory": [
-          "node_modules",
-          "src/"
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["src/components/store/*-slice.js"],
+      "rules": {
+        "no-param-reassign": [
+          "error",
+          {
+            "props": false
+          }
         ]
       }
     }
-  }
+  ]
 }

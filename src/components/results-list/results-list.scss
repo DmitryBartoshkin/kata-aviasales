@@ -22,4 +22,14 @@
   border-radius: $border-radius-size;
   font-family: $font-family;
   border: none;
+  cursor: pointer;
+}
+
+.btn-more-results:hover {
+  background-color: $color-bg-nonactive;
+}
+
+.ant-spin {
+  width: 100%;
+  text-align: center;
 }
