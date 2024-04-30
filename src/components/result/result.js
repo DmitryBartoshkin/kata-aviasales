@@ -50,7 +50,7 @@ export default function Result({ countTicketsShowned }) {
 
     const tickets = ticketsPack.map((el) => (
       <li
-        className={`result-wrapper${el.extraClass ? ` ${el.extraClass}` : ''}`}
+        className="result-wrapper"
         key={`${el.segments[0].date}-${el.segments[0].duration}-${el.segments[1].duration}`}
       >
         <div className="result-header">

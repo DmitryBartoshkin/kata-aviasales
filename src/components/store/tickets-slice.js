@@ -45,30 +45,36 @@ const ticketsSlice = createSlice({
         const item = el
         const arrLength0 = item.segments[0].stops.length
         const arrLength1 = item.segments[1].stops.length
+        if (typeof item.extraClass === 'undefined') {
+          item.extraClass = ''
+        }
 
         if (action.payload.id === 1) {
-          if ((arrLength0 === 0 || arrLength1 === 0) && !action.payload.checked) item.extraClass = 'zero-transfers'
-          if ((arrLength0 === 0 || arrLength1 === 0) && action.payload.checked) item.extraClass = ''
-          if (item.extraClass === 'all-transfers') item.extraClass = ''
+          if (arrLength0 === 0 || arrLength1 === 0) {
+            if (!action.payload.checked) item.extraClass += 'zero-transfers '
+            if (action.payload.checked) item.extraClass = item.extraClass.replace('zero-transfers ', '')
+          }
         } else if (action.payload.id === 2) {
-          if ((arrLength0 === 1 || arrLength1 === 1) && !action.payload.checked) item.extraClass = 'one-transfers'
-          if ((arrLength0 === 1 || arrLength1 === 1) && action.payload.checked) item.extraClass = ''
-          if (item.extraClass === 'all-transfers') item.extraClass = ''
+          if (arrLength0 === 1 || arrLength1 === 1) {
+            if (!action.payload.checked) item.extraClass += 'one-transfers '
+            if (action.payload.checked) item.extraClass = item.extraClass.replace('one-transfers ', '')
+          }
         } else if (action.payload.id === 3) {
-          if ((arrLength0 === 2 || arrLength1 === 2) && !action.payload.checked) item.extraClass = 'two-transfers'
-          if ((arrLength0 === 2 || arrLength1 === 2) && action.payload.checked) item.extraClass = ''
-          if (item.extraClass === 'all-transfers') item.extraClass = ''
+          if (arrLength0 === 2 || arrLength1 === 2) {
+            if (!action.payload.checked) item.extraClass += 'two-transfers '
+            if (action.payload.checked) item.extraClass = item.extraClass.replace('two-transfers ', '')
+          }
         } else if (action.payload.id === 4) {
-          if ((arrLength0 === 3 || arrLength1 === 3) && !action.payload.checked) item.extraClass = 'three-transfers'
-          if ((arrLength0 === 3 || arrLength1 === 3) && action.payload.checked) item.extraClass = ''
-          if (item.extraClass === 'all-transfers') item.extraClass = ''
+          if (arrLength0 === 3 || arrLength1 === 3) {
+            if (!action.payload.checked) item.extraClass += 'three-transfers '
+            if (action.payload.checked) item.extraClass = item.extraClass.replace('three-transfers ', '')
+          }
         } else if (action.payload.id === 0) {
-          if (!action.payload.checked && !item.extraClass) {
-            if (arrLength0 === 0 || arrLength1 === 0) item.extraClass = 'zero-transfers'
-            else if (arrLength0 === 1 || arrLength1 === 1) item.extraClass = 'one-transfers'
-            else if (arrLength0 === 2 || arrLength1 === 2) item.extraClass = 'two-transfers'
-            else if (arrLength0 === 3 || arrLength1 === 3) item.extraClass = 'three-transfers'
-            else item.extraClass = 'all-transfers'
+          if (!action.payload.checked) {
+            if (arrLength0 === 0 || arrLength1 === 0) item.extraClass += 'zero-transfers '
+            if (arrLength0 === 1 || arrLength1 === 1) item.extraClass += 'one-transfers '
+            if (arrLength0 === 2 || arrLength1 === 2) item.extraClass += 'two-transfers '
+            if (arrLength0 === 3 || arrLength1 === 3) item.extraClass += 'three-transfers '
           }
           if (action.payload.checked) item.extraClass = ''
         }
