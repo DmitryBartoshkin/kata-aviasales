@@ -1,6 +1,6 @@
 @import '../../general.scss';
 
-.result-wrapper {
+.ticket-wrapper {
   background-color: $color-bg-main;
   border-radius: $border-radius-size;
   box-shadow: $shadow;
@@ -8,28 +8,28 @@
   padding: 20px 20px 10px 20px;
 }
 
-.result-header {
+.ticket-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.result-body {
+.ticket-body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 
-.result-body > div {
+.ticket-body > div {
   width: 33.333333%;
 }
 
-.result-price {
+.ticket-price {
   font-size: 24px;
   color: $color-font-accent;
 }
 
-.result-body-title {
+.ticket-body-title {
   font-size: $font-size-small;
   color: $color-font-light;
   letter-spacing: 0.5px;

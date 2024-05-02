@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 
-import { toggleItem } from '../store/filter-slice'
-import { filterTicketsList } from '../store/tickets-slice'
+import { toggleItem } from '../../stores/filter-slice'
+import { filterTicketsList } from '../../stores/tickets-slice'
 import './filter.scss'
 
 export default function Filter() {

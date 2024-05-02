@@ -1,6 +1,6 @@
 @import '../../general.scss';
 
-.tabs-list {
+.sort-list {
   display: flex;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@
   border: 1px solid $color-border-main;
 }
 
-.tab {
+.sort {
   list-style: none;
   padding: 15px;
   font-size: $font-size-small;
@@ -21,18 +21,18 @@
   border-left: 1px solid $color-border-main;
 }
 
-.tab:first-child {
+.sort:first-child {
   border-top-left-radius: $border-radius-size;
   border-bottom-left-radius: $border-radius-size;
   border-left: none;
 }
 
-.tab:last-child {
+.sort:last-child {
   border-top-right-radius: $border-radius-size;
   border-bottom-right-radius: $border-radius-size;
 }
 
-.tab:hover {
+.sort:hover {
   cursor: pointer;
   background-color: $color-bg-hover;
 }
@@ -47,7 +47,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .tab {
+  .sort {
     display: flex;
     align-self: center;
   }

@@ -1,13 +1,12 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { getSearchIdApi } from '../store/tickets-slice'
+import { getSearchIdApi } from '../../stores/tickets-slice'
 import Filter from '../filter'
-import Tabs from '../tabs'
-import ResultsList from '../results-list'
-
+import Sort from '../sort'
+import TicketsList from '../tickets-list'
 import './app.scss'
-import appLogo from './app-logo.png'
+import appLogo from '../../assets/app-logo.png'
 
 export default function App() {
   const dispatch = useDispatch()
@@ -26,8 +25,8 @@ export default function App() {
           <Filter />
         </aside>
         <section className="app-main-content">
-          <Tabs />
-          <ResultsList />
+          <Sort />
+          <TicketsList />
         </section>
       </div>
     </div>

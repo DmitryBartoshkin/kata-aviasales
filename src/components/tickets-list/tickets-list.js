@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Spin } from 'antd'
 
-import { getTicketsListApi, sortTicketsListCheapest } from '../store/tickets-slice'
-import Result from '../result'
-import './results-list.scss'
+import { getTicketsListApi, sortTicketsListCheapest } from '../../stores/tickets-slice'
+import Ticket from '../ticket'
+import './tickets-list.scss'
 
-export default function ResultsList() {
+export default function TicketsList() {
   const [countTicketsShowned, setCountTicketsShowned] = useState(5)
   const ticketsListStore = (state) => state.ticketsList
   const ticketsListData = useSelector(ticketsListStore)
@@ -23,12 +23,12 @@ export default function ResultsList() {
 
   return (
     <>
-      <ul className="result-list">
-        <Result countTicketsShowned={countTicketsShowned} />
+      <ul className="tickets-list">
+        <Ticket countTicketsShowned={countTicketsShowned} />
         {loader ? <Spin /> : null}
       </ul>
       <button
-        className="btn-more-results"
+        className="btn-more-tickets"
         type="button"
         onClick={() => setCountTicketsShowned(countTicketsShowned + 5)}
       >
